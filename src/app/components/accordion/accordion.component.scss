@@ -1,0 +1,54 @@
+@import "../../../styles.scss";
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  margin: 180px 25px 25px 25px;
+  padding: 100px 20px 20px 20px;
+  background-color: white;
+  border-radius: 20px;
+  position: relative;
+  min-width: 240px;
+
+  &__title {
+    text-align: center;
+    font-size: 3em;
+  }
+
+  &__image {
+    position: absolute;
+    top: -10px;
+    left: 46%;
+    transform: translate(-50%, -50%);
+
+    &--shadow {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media screen and (min-width: $md-breakpoint) {
+  .accordion {
+    flex-direction: row-reverse;
+    padding: 50px 70px;
+
+    &__details__wrapper {
+        width: 50%;
+    }
+
+    &__title {
+        text-align: left;
+    }
+
+    &__image__wrapper {
+        width: 50%;
+    }
+
+    &__image {
+      position: static;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<ng-container>
+  <div
+    class="accordion__item"
+    *ngFor="let item of accordionItems"
+    (click)="onToggle(item)"
+    [ngClass]="{ 'accordion__item--active': this.selectedItem === item.id }"
+  >
+    <div class="accordion__item__header">
+      <span
+        class="accordion__item__title"
+        [ngClass]="{ 'accordion__item--active': this.selectedItem === item.id }"
+        >{{ item.title }}</span
+      >
+      <img
+        src="../../../assets/icon-arrow-down.svg"
+        class="accordion__item__arrow"
+        [ngClass]="{ 'accordion__item--active': this.selectedItem === item.id }"
+      />
+    </div>
+    <p
+      class="accordion__item__description"
+      [ngClass]="{ 'accordion__item--active': this.selectedItem === item.id }"
+      *ngIf="this.selectedItem === item.id"
+    >
+      {{ item.description }}
+    </p>
+    <hr />
+  </div>
+</ng-container>

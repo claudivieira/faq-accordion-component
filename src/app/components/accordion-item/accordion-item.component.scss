@@ -1,0 +1,44 @@
+@import "../../../styles.scss";
+
+.accordion__item {
+  font-family: $font-family;
+  padding: 0;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  color: $primary-dark-blue-color;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__arrow {
+    height: 8px;
+  }
+
+  &--active {
+    &.accordion__item__title {
+      color: $primary-dark-blue-color;
+      font-weight: bold;
+    }
+
+    &.accordion__item__arrow {
+      transform: rotate(180deg);
+    }
+
+    &.accordion__item__description {
+      transition: all 1s ease-in-out;
+      color: $neutral-dark-gayish-blue;
+      line-height: 20px;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid $dividers-color;
+    margin: 20px 0;
+  }
+}
